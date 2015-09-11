@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2= title
+  
+  include ./presentation.jade
+  
+  p
+    a(href='informationsPersonnage') Lancez-vous dans l'aventure !

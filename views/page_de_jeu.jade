@@ -1,0 +1,37 @@
+-
+  var habilite = 10;
+  var endurance = 5;
+  var PO = 45;
+  var disciplinesKai = ['Orientation','Chasse','Guérison'];
+  var sac = ['Glaive','Sabre']
+  var objetsSpeciaux = ['Potion']
+
+section
+  h3 Page de jeu
+  
+  section
+    ul
+      li Caractéristiques
+        ul
+          li Habilité : #{habilite}
+          li Endurance : #{endurance}
+          li Pièces d'or : #{PO}
+
+      li Disciplines Kai  
+        ul
+          each val in disciplinesKai
+            li= val
+      
+      li Equipement
+        ul
+          each val in sac
+            li= val
+      
+      li Objets spéciaux
+        ul
+          each val in objetsSpeciaux
+            li= val
+
+  section
+    h4 Historique des combats
+    p Et crac, un bourre-pif ! Vous avez tué un Ogre-Magie.

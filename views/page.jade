@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  p Page #{title}
+  
+  section(class='contenu')
+    p Page #{title}
 
-  !{htmlPage}
+    !{htmlPage}
   include ./page_de_jeu.jade
+  include ./historique.jade

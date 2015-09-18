@@ -3,7 +3,8 @@ extends layout
 block content
   h2= title
   
-  include ./presentation.jade
+  section(class='presentation')
+    include ./presentation.jade
   
   p
     a(href='nouveauPersonnage') Lancez-vous dans l'aventure !

@@ -38,23 +38,23 @@ block content
       label(for='maitrise_psychique_de_la_matiere') Maîtrise Psychique de la Matière
       input(type='checkbox' name='kai' value='maitrise_psychique_de_la_matiere' id='maitrise_psychique_de_la_matiere')
 
-      br
-      
-      - for (var i = 1; i < 3; i++) {
-      label(for='objet'+i) Objet #{i}
-      select
-        option(value='epee') Épée
-        option(value='sabre') Sabre
-        option(value='lance') Lance
-        option(value='masse_darme') Masse d'armes
-        option(value='marteau_de_guerre') Marteau de guerre
-        option(value='hache') Hâche
-        option(value='baton') Bâton
-        option(value='glaive') Glaive
-        option(value='gilet_de_cuir_matelasse') Gilet de cuir matelassé
-        option(value='potion_de_lampsur') Potion de Lampsur
-        option(value='rations_speciales') Rations spéciales
-      - }
+    br
+    
+    - for (var i = 1; i < 3; i++) {
+    label(for='objet'+i) Objet #{i}
+    select
+      option(value='epee') Épée
+      option(value='sabre') Sabre
+      option(value='lance') Lance
+      option(value='masse_darme') Masse d'armes
+      option(value='marteau_de_guerre') Marteau de guerre
+      option(value='hache') Hâche
+      option(value='baton') Bâton
+      option(value='glaive') Glaive
+      option(value='gilet_de_cuir_matelasse') Gilet de cuir matelassé
+      option(value='potion_de_lampsur') Potion de Lampsur
+      option(value='rations_speciales') Rations spéciales
+    - }
       
   p
     a(href='/page/1') Commencer le jeu

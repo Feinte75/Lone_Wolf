@@ -5,19 +5,25 @@ router.get('/', function(req, res) {
     // Cette fonction va tenter de convertir le fichier jade situé à
     // view/index.jade en HTML pour l'envoyer vers le client.
     // On profite pour envoyer au client l'attribut « title ».
-    res.render('index', { title: "Lone Wolf (title)" });
+    res.render('index', { title: "Lone Wolf" });
 });
 
 router.get('/nouveauPersonnage', function(req, res) {
     res.render('nouveau_personnage');
 });
 
-router.get('/pagedejeu', function(req, res) {
-    res.render('page_de_jeu');
-});
 
 router.get('/aide', function(req, res) {
     res.render('aide');
+});
+
+router.get('/pages/illustrations/:valeur', function(req, res) {
+    res.sendFile('/pages/illustrations/'+req.params.valeur);
+});
+
+// Route pour débugage
+router.get('/pagedejeu', function(req, res) {
+    res.render('page_de_jeu');
 });
 
 

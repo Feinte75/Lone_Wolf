@@ -1,2 +1,6 @@
 @import url('/stylesheets/nav.css');
 
+h1 {
+    font-size: 50px;
+    text-align: center;
+}

@@ -3,60 +3,71 @@ extends layout
 block content
   section(class='characterCreation')
     form
-      label(for='characterName') Nom du personnage
-      input(type='text' id='characterName')
+      div(class="characterName")
+        label(for='characterName') Nom du personnage
+        input(type='text' id='characterName')
       
       fieldset(class='kaiFieldSet')
         legend Choisissez vos 5 disciplines Kai
         
-        label(for='camouflage') Le Camouflage
-        input(type='checkbox' name='kai' value='camouflage' id='camouflage')
-  
-        label(for='chasse') La Chasse
-        input(type='checkbox' name='kai' value='chasse' id='chasse')
-  
-        label(for='sixieme_sens') Sixième Sens
-        input(type='checkbox' name='kai' value='sixieme_sens' id='sixieme_sens')
-  
-        label(for='orientation') L'Orientation
-        input(type='checkbox' name='kai' value='orientation' id='orientation')
-  
-        label(for='guerison') La Guérison
-        input(type='checkbox' name='kai' value='guerison' id='guerison')
-  
-        label(for='maitrise_des_armes') La Maîtrise des Armes
-        input(type='checkbox' name='kai' value='maitrise_des_armes' id='maitrise_des_armes')
-  
-        label(for='bouclier_psychique') Bouclier Psychique
-        input(type='checkbox' name='kai' value='bouclier_psychique' id='bouclier_psychique')
-  
-        label(for='puissance_psychique') Puissance Psychique
-        input(type='checkbox' name='kai' value='puissance_psychique' id='puissance_psychique')
-  
-        label(for='communication_animale') Communication Animale
-        input(type='checkbox' name='kai' value='communication_animale' id='communication_animale')
-  
-        label(for='maitrise_psychique_de_la_matiere') Maîtrise Psychique de la Matière
-        input(type='checkbox' name='kai' value='maitrise_psychique_de_la_matiere' id='maitrise_psychique_de_la_matiere')
-  
+        table
+          tr
+            td
+              label(for='camouflage') Le Camouflage
+              input(type='checkbox' name='kai' value='camouflage' id='camouflage')
+            td
+              label(for='chasse') La Chasse
+              input(type='checkbox' name='kai' value='chasse' id='chasse')
+          tr
+            td
+              label(for='sixieme_sens') Sixième Sens
+              input(type='checkbox' name='kai' value='sixieme_sens' id='sixieme_sens')
+            td
+              label(for='orientation') L'Orientation
+              input(type='checkbox' name='kai' value='orientation' id='orientation')
+          tr
+            td
+              label(for='guerison') La Guérison
+              input(type='checkbox' name='kai' value='guerison' id='guerison')
+            td
+              label(for='maitrise_des_armes') La Maîtrise des Armes
+              input(type='checkbox' name='kai' value='maitrise_des_armes' id='maitrise_des_armes')
+          tr
+            td
+              label(for='bouclier_psychique') Bouclier Psychique
+              input(type='checkbox' name='kai' value='bouclier_psychique' id='bouclier_psychique')
+            td
+              label(for='puissance_psychique') Puissance Psychique
+              input(type='checkbox' name='kai' value='puissance_psychique' id='puissance_psychique')
+          tr
+            td
+              label(for='communication_animale') Communication Animale
+              input(type='checkbox' name='kai' value='communication_animale' id='communication_animale')
+            td
+              label(for='maitrise_psychique_de_la_matiere') Maîtrise Psychique de la Matière
+              input(type='checkbox' name='kai' value='maitrise_psychique_de_la_matiere' id='maitrise_psychique_de_la_matiere')
+
       br
       fieldset(class='objectSelectionFieldSet')
-        legend Choisissez vos 2 objets :      
-        - for (var i = 1; i < 3; i++) {
-        label(for='object'+i) Objet #{i}
-        select(class='object'+i)
-          option(value='epee') Épée
-          option(value='sabre') Sabre
-          option(value='lance') Lance
-          option(value='masse_darme') Masse d'armes
-          option(value='marteau_de_guerre') Marteau de guerre
-          option(value='hache') Hâche
-          option(value='baton') Bâton
-          option(value='glaive') Glaive
-          option(value='gilet_de_cuir_matelasse') Gilet de cuir matelassé
-          option(value='potion_de_lampsur') Potion de Lampsur
-          option(value='rations_speciales') Rations spéciales
-        - }
+        legend Choisissez vos 2 objets
+        table
+          tr
+            - for (var i = 1; i < 3; i++) {
+            td
+              label(for='object'+i) Objet #{i} :
+              select(class='object'+i)
+                option(value='epee') Épée
+                option(value='sabre') Sabre
+                option(value='lance') Lance
+                option(value='masse_darme') Masse d'armes
+                option(value='marteau_de_guerre') Marteau de guerre
+                option(value='hache') Hâche
+                option(value='baton') Bâton
+                option(value='glaive') Glaive
+                option(value='gilet_de_cuir_matelasse') Gilet de cuir matelassé
+                option(value='potion_de_lampsur') Potion de Lampsur
+                option(value='rations_speciales') Rations spéciales
+              - }
         
     p
       a(href='/page/1') Commencer le jeu

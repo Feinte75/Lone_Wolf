@@ -1,0 +1,50 @@
+div.characterName {
+    margin: 10px auto;
+}
+
+div.characterName label {
+    padding-right: 5px;
+}
+
+
+
+/* Tableaux */
+
+section.characterCreation fieldset table {
+    width: 100%;
+}
+
+section.characterCreation fieldset table tbody tr td {
+    /* background-color: blue; */
+    padding-right: 20px;
+    position: relative;
+}
+
+section.characterCreation fieldset table tbody tr td input {
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+section.characterCreation fieldset table tbody tr td label {
+    /* background-color: #E2BDBD; */
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* Tableau disciplines Kai */
+
+section.characterCreation fieldset.kaiFieldSet table{
+    text-align: left;
+}
+
+
+/* Tableau objets */
+
+section.characterCreation fieldset.objectSelectionFieldSet table tbody tr td label {
+    display: inline;
+    width: auto;
+    padding-right: 10px;
+}

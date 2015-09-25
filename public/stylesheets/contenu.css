@@ -1,3 +1,8 @@
 section.contenu {
     clear: left;
 }
+
+section.contenu p:first-of-type::first-letter {
+    font-family: cursive;
+    font-size: xx-large;
+}

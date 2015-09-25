@@ -1,0 +1,10 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 40px auto;
+    max-width: 650px;
+    padding: 0 10px;
+}
+

@@ -1,3 +1,9 @@
+@import url('/stylesheets/header.css');
+@import url('/stylesheets/body.css');
+@import url('/stylesheets/new_character.css');
+@import url('/stylesheets/stats.css');
+@import url('/stylesheets/combat.css');
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -6,3 +12,4 @@ body {
 a {
   color: #00B7FF;
 }
+

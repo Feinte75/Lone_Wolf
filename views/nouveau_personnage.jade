@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  section(class='creation_personnage')
+  section(class='characterCreation')
     form
-      label(for='nomPersonnage') Nom du personnage
-      input(type='text' id='nomPersonnage')
+      label(for='characterName') Nom du personnage
+      input(type='text' id='characterName')
       
-      fieldset
+      fieldset(class='kaiFieldSet')
         legend Choisissez vos 5 disciplines Kai
         
         label(for='camouflage') Le Camouflage
@@ -40,11 +40,11 @@ block content
         input(type='checkbox' name='kai' value='maitrise_psychique_de_la_matiere' id='maitrise_psychique_de_la_matiere')
   
       br
-      fieldset
+      fieldset(class='objectSelectionFieldSet')
         legend Choisissez vos 2 objets :      
         - for (var i = 1; i < 3; i++) {
-        label(for='objet'+i) Objet #{i}
-        select
+        label(for='object'+i) Objet #{i}
+        select(class='object'+i)
           option(value='epee') Épée
           option(value='sabre') Sabre
           option(value='lance') Lance

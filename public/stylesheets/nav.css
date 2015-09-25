@@ -1,0 +1,37 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 40px auto;
+    max-width: 650px;
+    padding: 0 10px;
+}
+
+
+nav ul {
+    float: left;
+    list-style-type: none;
+    width: 100%;
+}
+
+nav ul li {
+    border: 1px solid black;   float: left;      
+    margin: 5px 10px;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+nav ul li a {
+    color: black;   
+    display: block;   padding: 10px;   text-decoration: none;
+    transition: width 2s;
+}
+
+nav ul li a:hover {
+    background-color: yellowgreen;
+}
+
+nav ul li:hover {
+    transform: scale(1.05);
+}

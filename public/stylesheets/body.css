@@ -12,3 +12,10 @@ body {
     padding: 0 10px;
 }
 
+body section {
+  text-align: justify;
+}
+
+body section h2{
+  text-align: center;
+}

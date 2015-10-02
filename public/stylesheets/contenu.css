@@ -6,3 +6,10 @@ section.contenu p:first-of-type::first-letter {
     font-family: cursive;
     font-size: xx-large;
 }
+
+/*
+Maintenant pour toutes les sections (body.css)
+section.contenu {
+  text-align: justify;
+}
+*/

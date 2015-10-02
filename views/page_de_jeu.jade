@@ -8,27 +8,28 @@
   var sac = ['Glaive','Sabre']
   var objetsSpeciaux = ['Potion']
 
-section(class='page_de_jeu')
-  h3 Page de jeu
-  ul
-    li Caractéristiques
-      ul
-        li Habilité : #{habilite}
-        li Endurance : #{endurance}
-        li Pièces d'or : #{PO}
+section(class='pageDeJeu')
+  div(class='scrollable')
+    h3 Page de jeu
+    ul(class="categories")
+      li Caractéristiques
+        ul(class="items")
+          li Habilité : #{habilite}
+          li Endurance : #{endurance}
+          li Pièces d'or : #{PO}
   
-     li Disciplines Kai  
-        ul
-          each val in disciplinesKai
-            li= val
+       li Disciplines Kai  
+          ul(class="items")
+            each val in disciplinesKai
+              li= val
         
-     li Equipement
-       ul
-         each val in sac
-           li= val
+       li Equipement
+         ul(class="items")
+           each val in sac
+             li= val
         
-     li Objets spéciaux
-       ul
-         each val in objetsSpeciaux
-           li= val
-  
+       li Objets spéciaux
+         ul(class="items")
+            each val in objetsSpeciaux
+              li= val
+ 

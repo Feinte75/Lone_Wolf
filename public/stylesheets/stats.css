@@ -1,0 +1,15 @@
+section.pageDeJeu {
+	float: left;
+	width: 30%;
+}
+
+div.scrollable {
+	position: fixed;
+	padding: 40px 10px 350px 50px;
+	text-align: center;
+}
+
+section.pageDeJeu ul {
+	list-style-type: none;
+	text-align: left;
+}

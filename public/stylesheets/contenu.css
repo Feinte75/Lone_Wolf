@@ -1,5 +1,7 @@
 section.contenu {
-    clear: left;
+    #clear: left;
+		float: left;
+		width: 70%; 
 }
 
 section.contenu p:first-of-type::first-letter {

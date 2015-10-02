@@ -17,17 +17,31 @@ nav ul li {
     transition: transform 0.2s;
 }
 
-nav ul li a {
-    color: black;   
-    display: block;   padding: 10px;   text-decoration: none;
+nav ul li {
     transition: width 2s;
 }
 
-nav ul li a:hover {
+nav ul li:hover {
     background-color: #96CAD6;
+    transform: scale(1.03);
 }
 
-nav ul li:hover {
-    transform: scale(1.03);
+nav ul li a {
+    color: black;   
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+body.accueil a.bouttonAccueil{
+    background-color:#A76F6F;
+}
+
+body.nouveauPersonnage a.bouttonNouveauPersonnage{
+    background-color:#A76F6F;
+}
+
+body.aide a.bouttonAide{
+    background-color:#A76F6F;
 }
 

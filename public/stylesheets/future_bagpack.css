@@ -1,0 +1,38 @@
+div#layer{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    
+    visibility: hidden;
+    
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+div#layer:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+div#layer a {
+    background-color: rgba(0, 0, 0, 0.25);
+    
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+div#layer p {
+    color: rebeccapurple;
+    background-color: antiquewhite;
+    
+    left: 40%;
+    top: 30%;
+    
+    font-size: 3em;
+    padding: 20px;
+    
+    position: absolute;
+}

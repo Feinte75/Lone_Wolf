@@ -11,7 +11,7 @@ nav ul {
 }
 
 nav ul li {
-    border: 1px solid black;   float: left;      
+    border: 1px solid black;   float: left;
     margin: 5px 10px;
     border-radius: 5px;
     transition: transform 0.2s;
@@ -27,21 +27,23 @@ nav ul li:hover {
 }
 
 nav ul li a {
-    color: black;   
+    color: black;
     display: block;
     padding: 10px;
     text-decoration: none;
 }
 
 body.accueil a.bouttonAccueil{
-    background-color:#A76F6F;
+    /*background-color:#A76F6F;*/
+    background-color:#96CAD6;
 }
 
 body.nouveauPersonnage a.bouttonNouveauPersonnage{
-    background-color:#A76F6F;
+    /*background-color:#A76F6F;*/
+    background-color:#96CAD6;
 }
 
 body.aide a.bouttonAide{
-    background-color:#A76F6F;
+    /*background-color:#A76F6F;*/
+    background-color:#96CAD6;
 }
-

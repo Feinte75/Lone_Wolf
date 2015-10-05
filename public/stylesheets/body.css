@@ -10,6 +10,12 @@ body {
 		max-width: 800px;
 		margin: 40px auto;
     padding: 0 10px;
+    height: 100%;
+}
+
+body.conteneur {
+    min-height: 100%;
+    height: 100%;
 }
 
 body section {

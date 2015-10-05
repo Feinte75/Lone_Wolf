@@ -3,5 +3,6 @@ footer {
 	font-style: italic;
 	font-size: small;
 	text-align: center;
-	margin: 20px 0px; 
+	margin: 20px 10px;
+    clear: both;
 }

@@ -1,15 +1,21 @@
-section.pageDeJeu {
-	float: left;
-	width: 30%;
+section.scrollable {
+	position: fixed;
+    display: inline;
+	padding: 10px;
+	text-align: center;
+    width: 30%;
+    font-size: 15px;
+    height: 100%
 }
 
-div.scrollable {
-	position: fixed;
-	padding: 40px 10px 350px 50px;
-	text-align: center;
+section.pageDeJeu {
 }
 
 section.pageDeJeu ul {
 	list-style-type: none;
 	text-align: left;
 }
+
+section.historique {
+}
+

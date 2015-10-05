@@ -1,6 +1,8 @@
 section(class='combat')
   h3 Combat :
-  p Tour 1: Vous faites face à la bête, voulez vous attaquer ?
-  p Vous frappez avec 10 d'habileté, clickez pour obtenir le bonus de dés "click"
-  p Vous infligez x blessures à Baknar et recevez y dégats
-  p Continuer de combattre ? Oui | Non 
+  p Tour 1: Vous faites face à la bête
+
+  fieldset(class='choixCombat')
+    legend Que choisissez vous ?
+    button(type='button', id='attaquer') attaquer
+    button(type='button', id='fuir') fuir

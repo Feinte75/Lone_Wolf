@@ -1,11 +1,13 @@
 section.contenu {
     #clear: left;
-		float: left;
-		width: 70%; 
+    float: left;
+    width: 70%; 
 }
 
 section.contenu img {
     #TODO aligner horizontalement images
+    float: left;
+    padding: 0px 3px 0px 0px;
 }
 
 section.contenu p:first-of-type::first-letter {

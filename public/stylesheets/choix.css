@@ -1,0 +1,8 @@
+section.choix fieldset {
+    text-align: center;
+}
+
+section.choix fieldset input{
+    display: inline;
+    padding: 5px 15px;
+}

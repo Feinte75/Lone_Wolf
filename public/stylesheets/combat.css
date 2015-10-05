@@ -1,6 +1,11 @@
+section.combat fieldset {
+    text-align: center;
+}
+
 section.combat button {
 	padding: 5px 15px;
     margin: 5px 25px;
+    display: inline-block;
 }
 
 section.combat button :hover {

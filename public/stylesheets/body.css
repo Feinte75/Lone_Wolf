@@ -4,9 +4,9 @@ body {
     font-size: 18px;
     text-align: justify;
     line-height: 1.6;
-    
+
     text-align: center;
-    
+
 		max-width: 800px;
 		margin: 40px auto;
     padding: 0 10px;
@@ -19,7 +19,8 @@ body.conteneur {
 }
 
 body section {
-  text-align: justify;
+  /*text-align: justify;*/
+  text-align: center;
 }
 
 body section h2{

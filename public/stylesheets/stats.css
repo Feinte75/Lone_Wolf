@@ -1,11 +1,13 @@
 section.scrollable {
 	position: fixed;
-    display: inline;
-    margin: 0px 20px;
+	/* display: inline; */
+	margin: 0px 20px;
 	padding: 10px;
-	text-align: center;
-    width: 30%;
-    font-size: 15px;
+	/* text-align: center; */
+	width: 30%;
+	font-size: 0.9em;
+	
+	left: 65%;
 }
 
 section.pageDeJeu {
@@ -19,3 +21,5 @@ section.pageDeJeu ul {
 section.historique {
 }
 
+section.scrollable {
+}

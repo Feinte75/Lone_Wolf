@@ -1,13 +1,15 @@
 section.contenu {
     #clear: left;
     float: left;
-    width: 70%; 
+    width: 70%;
+
+    text-align: justify;
 }
 
+/*####### IMAGES ########*/
 section.contenu img {
-    #TODO aligner horizontalement images
-    float: left;
-    padding: 0px 3px 0px 0px;
+  float: left;
+  margin-right: 10px;
 }
 
 section.contenu p:first-of-type::first-letter {
@@ -22,6 +24,8 @@ section.contenu {
 }
 */
 
+
+/*####### CONFIRMATION MODIFICATIONS INVENTAIRES ############*/
 a.ilFautCliquer {
     text-decoration: none;
     font-weight: bold;

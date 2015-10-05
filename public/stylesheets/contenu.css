@@ -21,3 +21,22 @@ section.contenu {
   text-align: justify;
 }
 */
+
+a.ilFautCliquer {
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+}
+
+a.ilFautCliquer:link {
+    color: red;
+}
+
+a.ilFautCliquer:visited {
+    color: green;
+}
+
+a.ilFautCliquer:active {
+    background-color: rgba(0, 214, 63, 0.34);
+}

@@ -17,19 +17,38 @@ section(class='pageDeJeu')
           li Habilité : #{habilite}
           li Endurance : #{endurance}
           li Pièces d'or : #{PO}
-  
-       li Disciplines Kai  
+
+       li Disciplines Kai
           ul(class="items")
             each val in disciplinesKai
               li= val
-        
+
        li Equipement
          ul(class="items")
            each val in sac
              li= val
-        
-       li Objets spéciaux
+
+       li
+         a(href="#objetsSpeciaux") Objets spéciaux
          ul(class="items")
             each val in objetsSpeciaux
               li= val
- 
+
+       li
+         a(href="#sacADos") Sac à dos
+
+div(id="sacADos")
+  a(href="#")
+  div
+    p Equipement :
+    ul
+      each val in sac
+        li= val
+
+div(id="objetsSpeciaux")
+  a(href="#")
+  div
+    p Les objets spéciaux :
+    ul
+      each val in objetsSpeciaux
+        li= val

@@ -1,38 +1,46 @@
-div#layer{
+div#objetsSpeciaux{
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    
+
     visibility: hidden;
-    
+
     opacity: 0;
     transition: all 0.5s ease;
 }
 
-div#layer:target{
+div#objetsSpeciaux:target{
     visibility: visible;
     opacity: 1;
 }
 
-div#layer a {
+div#objetsSpeciaux a {
     background-color: rgba(0, 0, 0, 0.25);
-    
+
     height: 100%;
     width: 100%;
     display: block;
 }
 
-div#layer p {
+div#objetsSpeciaux div {
     color: rebeccapurple;
     background-color: antiquewhite;
-    
+
     left: 40%;
     top: 30%;
-    
-    font-size: 3em;
-    padding: 20px;
-    
+
     position: absolute;
+}
+
+div#objetsSpeciaux div p {
+    font-size: 3em;
+    margin: 5px 10px;
+}
+
+div#objetsSpeciaux div ul li {
+    list-style: none;
+    font-size: 2em;
+    text-align: left;
 }

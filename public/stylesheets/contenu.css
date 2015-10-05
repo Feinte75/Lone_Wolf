@@ -4,6 +4,10 @@ section.contenu {
 		width: 70%; 
 }
 
+section.contenu img {
+    #TODO aligner horizontalement images
+}
+
 section.contenu p:first-of-type::first-letter {
     font-family: cursive;
     font-size: xx-large;

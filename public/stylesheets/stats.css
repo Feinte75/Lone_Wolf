@@ -1,11 +1,11 @@
 section.scrollable {
 	position: fixed;
     display: inline;
+    margin: 0px 20px;
 	padding: 10px;
 	text-align: center;
     width: 30%;
     font-size: 15px;
-    height: 100%
 }
 
 section.pageDeJeu {

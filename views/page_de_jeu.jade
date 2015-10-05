@@ -9,46 +9,44 @@
   var objetsSpeciaux = ['Potion']
 
 section(class='pageDeJeu')
-  div(class='scrollable')
-    h3 Page de jeu
-    ul(class="categories")
-      li Caractéristiques
+  h3 Page de jeu
+  ul(class="categories")
+    li Caractéristiques
+      ul(class="items")
+        li Habilité : #{habilite}
+        li Endurance : #{endurance}
+        li Pièces d'or : #{PO}
+
+     li Disciplines Kai
         ul(class="items")
-          li Habilité : #{habilite}
-          li Endurance : #{endurance}
-          li Pièces d'or : #{PO}
+          each val in disciplinesKai
+            li= val
 
-       li Disciplines Kai
-          ul(class="items")
-            each val in disciplinesKai
-              li= val
+     li Equipement
+       ul(class="items")
+         each val in sac
+           li= val
 
-       li Equipement
-         ul(class="items")
-           each val in sac
-             li= val
+     li
+       a(href="#objetsSpeciaux") Objets spéciaux
+       ul(class="items")
+          each val in objetsSpeciaux
+            li= val
+     li
+       a(href="#sacADos") Sac à dos
 
-       li
-         a(href="#objetsSpeciaux") Objets spéciaux
-         ul(class="items")
-            each val in objetsSpeciaux
-              li= val
+  div(id="sacADos")
+    a(href="#")
+    div
+      p Equipement :
+      ul
+        each val in sac
+          li= val
 
-       li
-         a(href="#sacADos") Sac à dos
-
-div(id="sacADos")
-  a(href="#")
-  div
-    p Equipement :
-    ul
-      each val in sac
-        li= val
-
-div(id="objetsSpeciaux")
-  a(href="#")
-  div
-    p Les objets spéciaux :
-    ul
-      each val in objetsSpeciaux
-        li= val
+  div(id="objetsSpeciaux")
+    a(href="#")
+    div
+      p Les objets spéciaux :
+      ul
+        each val in objetsSpeciaux
+          li= val

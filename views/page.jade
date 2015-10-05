@@ -1,10 +1,12 @@
 extends layout
 
 block content
-  
-  section(class='contenu')
-    h2 Page #{title}
+  section(class='conteneur')  
+    section(class='contenu')
+      h2 Page #{title}
 
-    !{htmlPage}
-  include ./page_de_jeu.jade
-  include ./historique.jade
+      !{htmlPage}
+
+    section(class='scrollable')
+      include ./page_de_jeu.jade
+      include ./historique.jade

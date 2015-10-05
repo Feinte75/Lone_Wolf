@@ -1,0 +1,8 @@
+section.combat button {
+	padding: 5px 15px;
+    margin: 5px 25px;
+}
+
+section.combat button :hover {
+	cursor: pointer;
+}

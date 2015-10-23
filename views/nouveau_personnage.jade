@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  section(class='characterCreation')
-    form
-      div(class="characterName")
+  section.characterCreation
+    form(action="nouveau_personnage" method="post")
+      div.characterName
         label(for='characterName') Nom du personnage
         input(type='text' id='characterName')
       
-      fieldset(class='kaiFieldSet')
+      fieldset.kaiFieldSet
         legend Choisissez vos 5 disciplines Kai
         
         table
@@ -48,7 +48,7 @@ block content
               input(type='checkbox' name='kai' value='maitrise_psychique_de_la_matiere' id='maitrise_psychique_de_la_matiere')
 
       br
-      fieldset(class='objectSelectionFieldSet')
+      fieldset.objectSelectionFieldSet
         legend Choisissez vos 2 objets
         table
           tr
@@ -69,5 +69,4 @@ block content
                 option(value='rations_speciales') Rations spéciales
               - }
         
-    p
-      a(href='/page/1') Commencer le jeu
+    input(type="submit" value="Commencer le jeu")

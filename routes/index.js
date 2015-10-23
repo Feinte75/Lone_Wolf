@@ -16,31 +16,4 @@ router.get('/aide', function(req, res) {
     res.render('aide', { pageActuelle: "aide"});
 });
 
-router.get('/pages/illustrations/:valeur', function(req, res) {
-    res.sendFile('/pages/illustrations/'+req.params.valeur);
-});
-
-// Route pour débugage
-router.get('/pagedejeu', function(req, res) {
-    res.render('page_de_jeu');
-});
-
-
-/* GET home page. */
-// http://stackoverflow.com/questions/20089582/how-to-get-url-parameter-in-express-node-js
-// http://stackoverflow.com/questions/12132978/use-a-variable-in-a-jade-include
-router.get('/page/:valeur', function(req, res, next) {
-  // On récupère le paramètre de l'URL
-  var v = req.params.valeur
-
-  // On crée dynamiquement la page qu'on souhaite charger
-  var page = "./pages/page" + v + ".jade"
-
-  // On veut d'abord convertir la page en HTML, une fois que la conversion
-  // est faite, on va injecter le HTML généré vers le fichier page.jade
-  res.render(page, function(err, html) {
-      res.render('page', { title: v, htmlPage: html })
-  });
-});
-
 module.exports = router;

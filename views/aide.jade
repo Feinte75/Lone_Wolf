@@ -1,7 +1,7 @@
 extends layout  
 block content
-  div(class="aide")
-  section
+  div.aide
+    section
         p Nous présentons dans cette section les principes de fonctionnement du jeu, affn de vous fournir une vision globale de ce que vous devrez implémenter tout au long du trimestre. Mais toute la logique et les calculs derrière ces principes ne seront pas implémentés avant le TP3. Lorsqu'on débute le jeu, trois valeurs sont générées aléatoirement. La première, que nous appellerons points d'HABILETÉ, comprise entre 10 et 19, détermine l'HABILETÉ au combat. La deuxième représente les points d'ENDURANCE et est comprise entre 20 et 29. Lorsqu'un joueur est blessé dans un combat, il perd des points d'ENDURANCE. Lorsque la valeur sera à zéro, il sera considéré mort et son aventure sera donc terminée. Dans certaines situations, il sera possible de récupérer des points d'ENDURANCE, mais on ne pourra jamais dépasser la valeur initiale. La troisième valeur, comprise entre 10 et 19, indique le nombre de Pièces d'Or que possède le joueur au départ. À noter qu'à aucun moment le joueur ne pourra posséder sur lui plus de 50 Pièces d'Or.
         h2 Disciplines Kai 
         p Le joueur débute avec le rang d'Initié, ce qui signiffe qu'il peut maîtriser 5 disciplines parmi les 10 disponibles : 

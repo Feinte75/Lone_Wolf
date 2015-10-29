@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var page = require('./routes/page');
 var personnage = require('./routes/personnage');
+var combat = require('./routes/combat');
 
 var app = express();
 
@@ -36,7 +37,7 @@ app.use('/', routes);
 app.use('/pages/', page);
 app.use('/', personnage);
 app.use('/users', users);
-
+app.use('/', combat);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -8,10 +8,6 @@ router.get('/', function(req, res) {
     res.render('index', { title: "Lone Wolf", pageActuelle: "accueil"});
 });
 
-router.get('/nouveauPersonnage', function(req, res) {
-    res.render('nouveau_personnage', { pageActuelle: "nouveauPersonnage"});
-});
-
 router.get('/aide', function(req, res) {
     res.render('aide', { pageActuelle: "aide"});
 });

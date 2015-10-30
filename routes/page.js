@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+
+// WARNING ANCIENNE VERSION, UTILISER JEU.JS !!!!!!!!!!!
+
 // Route pour débugage
 router.get('/pagedejeu', function(req, res) {
     res.render('page_de_jeu');

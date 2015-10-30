@@ -11,6 +11,7 @@ var jeu = require('./routes/jeu');
 var page = require('./routes/page');
 var personnage = require('./routes/personnage');
 var combat = require('./routes/combat');
+var choixAleatoire = require('./routes/choix_aleatoire');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/jeu/', jeu);
 app.use('/page/', page);
 app.use('/', personnage);
 app.use('/', combat);
+app.use('/', choixAleatoire);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

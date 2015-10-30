@@ -1,3 +1,6 @@
+// Objet contenant les informations des pages
+// Nombre de sections et données additionnelle specifiques (Pour l'instant uniquement choix aléatoire pour la page 167
+
 module.exports = {
   
   page1 : {
@@ -41,7 +44,11 @@ module.exports = {
   },
 
   page167 : {
-    nbSection : 2
+    nbSection : 2,
+    ranges : [
+      [0, 6, 85],
+      [7, 9, 300]
+    ]
   },
 
   page172 : {

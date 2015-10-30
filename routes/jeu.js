@@ -4,24 +4,24 @@ var pageInfo = require('./page_info');
 
 router.get('/:pageNum', function(req, res, next) {
   // On récupère le paramètre de l'URL
-  var pageNum = req.params.pageNum
-  // On crée dynamiquement la page qu'on souhaite charger
+  var pageNum = req.params.pageNum;
+
   info = {
     id : pageNum
   }
 
+  // Rempli info par les differentes sections qui compose la page entiere
   for(i = 0; i <  pageInfo["page"+pageNum].nbSection; i++) {
     
     var page = "./jeu/"+ pageNum + "/section" + 1 + ".jade"
 
     res.render(page, function(err, html) {
-      info["section"+ (i+1)] = {};
-      
+      info["section"+ (i+1)] = {};  
       info["section"+ (i+1)].html = html;
-      //res.render('./jeu/page', { title: pageNum, htmlPage: html })
     });
-
   }
+
+  // Envoi le json contenant toutes les sections
   res.json(info);
 });
 
@@ -29,6 +29,7 @@ router.get('/:pageNum/:section', function(req, res, next) {
   // On récupère le paramètre de l'URL
   var pageNum = req.params.pageNum
   var section = req.params.section
+
   // On crée dynamiquement la page qu'on souhaite charger
   var page = "./jeu/"+ pageNum + "/section" + section + ".jade"
   

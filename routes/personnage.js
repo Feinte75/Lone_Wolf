@@ -23,7 +23,8 @@ router.post('/nouveauPersonnage', function(req, res) {
   if(typeof req.body.objet1 == 'undefined' || req.body.objet2 == 'undefined') {
     res.status(500).render('nouveau_personnage', { erreur : "Veuillez selectionner deux objets"});
   }
-
+  
+  // Declaration de l'objet personnage
   personnage = {
     nomPersonnage : "",
     disciplinesKai : {

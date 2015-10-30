@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  section.conteneur
+    section.contenu
+      h2 Page #{title}
+
+      !{htmlPage}  
+
+      section.scrollable
+      include ./page_de_jeu.jade
+      include ./historique.jade

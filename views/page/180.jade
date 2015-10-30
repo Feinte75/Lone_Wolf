@@ -1,0 +1,53 @@
+p Dans l'obscurité balayée de neige, vous distinguez deux petits points rouges et brillants qui grandissent peu à peu. Puis soudain, une forme se dessine dans l'ombre : vous voyez alors apparaître une grande et hideuse créature quadrupède qui bondit sur vous. Elle a les yeux étincelants et ouvre une gueule hérissée de dents, exhibant en même temps une énorme langue couverte de poils rêches qu'elle pointe en direction de votre visage.
+
+p « Argh ! Un Languabarb ! » s'écrie Fenor. Il se précipite aussitôt à votre côté en brandissant une épée dont il essaie de frapper la langue de la créature. L'animal, cependant, est déjà sur vous et il vous faut le combattre.
+
+p Indifférente à l'attaque de Fenor, la bête monstrueuse ne semble s'intéresser qu'à vous. Fenor lui porte ses coups par-derrière et ne sera donc pas blessé.
+
+p En revanche, il fera perdre 3 points supplémentaires d'ENDURANCE à votre adversaire, et cela à chaque Assaut, enraison des blessures qu'il lui inflige.
+
+section#combat
+    div#monstre
+        span#nomMonstre Languabarb:
+        | HABILETÉ
+        span#monstreAttaque 11
+        | ENDURANCE
+        span#monstreEndurance 35
+
+    div.rondeCombat
+        div
+            | Ronde combat:
+            span 1
+        div
+            p Ratio de combat: 20
+            p Chiffre aléatoire: 6
+        div
+            p Ton ennemi a obtenu 11 dégâts -
+            p et a maintenant 39 point d'ENDURANCE.
+        div
+            p Lone Wolf a eu 2 dégâts -
+            p et a maintenant 18 points d'ENDURANCE.
+
+    div.rondeCombat
+        div
+            | Ronde combat:
+            span 2
+        div
+            p Ratio de combat: 20
+            p Chiffre aléatoire: 4
+        div
+            p Ton ennemi a obtenu 5 dégâts -
+            p et a maintenant 34 point d'ENDURANCE.
+        div
+            p Lone Wolf a eu 5 dégâts -
+            p et a maintenant 13 points d'ENDURANCE.
+
+    div#choixCombat
+        button#combattre.button COMBATTRE
+        button#fuir.button FUIR
+
+div#decision
+  img(src="/images/decision.jpg")
+  div
+      p Si vous tuez la créature sans perdre aucun point d'ENDURANCE, #[a(href="/jeu/70") rendez-vous au 70].
+      p  Si vous perdez des points d'ENDURANCE aucours du combat, #[a(href="/jeu/129") rendez-vous immédiatement au 129].

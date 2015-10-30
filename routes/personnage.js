@@ -5,22 +5,23 @@ router.get('/nouveauPersonnage', function(req, res) {
   res.render('nouveau_personnage', { pageActuelle: "nouveauPersonnage"});
 });
 
-router.get('/test', function(req, res) {
+router.get('/sessiontest', function(req, res) {
   res.json(req.session.personnage);
 });
 
 router.post('/nouveauPersonnage', function(req, res) {
 
-  if(typeof req.body.kai == 'undefined' || req.body.kai.length != 5) {
-      res.status(500).json({ error : "Selectionnez 5 disciplines kai"});
+  // Verification Inputs
+  if(typeof req.body.nomPersonnage == 'undefined' || req.body.nomPersonnage == '') {
+      res.status(500).render('nouveau_personnage',{ erreur : "Entrez un nom de personnage"});
   }
-     
-  if(typeof req.body.nomPersonnage == 'undefined') {
-      res.status(500).json({ error : "Entrez un nom de personnage"});
+
+  if(typeof req.body.kai == 'undefined' || req.body.kai.length != 5) {
+      res.status(500).render('nouveau_personnage', { erreur : "Selectionnez 5 disciplines kai"});
   }
   
   if(typeof req.body.objet1 == 'undefined' || req.body.objet2 == 'undefined') {
-    res.status(500).json({ error : "Veuillez selectionner deux objets"});
+    res.status(500).render('nouveau_personnage', { erreur : "Veuillez selectionner deux objets"});
   }
 
   personnage = {
@@ -43,6 +44,7 @@ router.post('/nouveauPersonnage', function(req, res) {
     endurance : 0 
   }
 
+  // Verification du nom des disciplines et attribution
   for (var kai in personnage.disciplinesKai) {
     req.body.kai.forEach(function(e) {
       if(e == kai) {
@@ -51,7 +53,6 @@ router.post('/nouveauPersonnage', function(req, res) {
     });
   }
 
-  // Ajout objets, TODO : Verification des inputs
   personnage.objet1 = req.body.objet1;
   personnage.objet2 = req.body.objet2;
   
@@ -60,7 +61,8 @@ router.post('/nouveauPersonnage', function(req, res) {
   personnage.endurance = Math.floor(Math.random() * (29 - 20 + 1) + 20);
 
   req.session.personnage = personnage;
-  res.json(personnage); 
+ 
+  res.redirect('/jeu/1'); 
 });
 
 module.exports = router;

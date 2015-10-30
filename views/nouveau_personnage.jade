@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  
+  h2 #{erreur}
   section.characterCreation
     form(action="nouveauPersonnage" method="post")
       div.characterName

@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var jeu = require('./routes/jeu');
 var page = require('./routes/page');
 var personnage = require('./routes/personnage');
 var combat = require('./routes/combat');
@@ -34,10 +34,11 @@ app.use(session({
 }));
 
 app.use('/', routes);
-app.use('/pages/', page);
+app.use('/jeu/', jeu);
+app.use('/page/', page);
 app.use('/', personnage);
-app.use('/users', users);
 app.use('/', combat);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -62,8 +62,18 @@ router.post('/nouveauPersonnage', function(req, res) {
   personnage.endurance = Math.floor(Math.random() * (29 - 20 + 1) + 20);
 
   req.session.personnage = personnage;
- 
+
+  var db = req.db;
+  var collection = db.get('personnages');
+
+  collection.insert(personnage, function (err, doc) {
+    if(err) {
+      res.send('DB problem');
+    }
+  }); 
+
   res.redirect('/jeu/1'); 
+
 });
 
 module.exports = router;

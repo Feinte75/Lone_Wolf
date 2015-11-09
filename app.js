@@ -6,6 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+// Mongo DB
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('mongodb://glelan:lonywolfylog4420@ds051524.mongolab.com:51524/lone_wolf');
+
 var routes = require('./routes/index');
 var jeu = require('./routes/jeu');
 var page = require('./routes/page');
@@ -33,6 +38,11 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+app.use(function(req, res, next){
+    req.db = db;
+    next();
+});
 
 app.use('/', routes);
 app.use('/jeu/', jeu);

@@ -19,11 +19,11 @@ router.post('/nouveauPersonnage', function(req, res) {
   if(typeof req.body.kai == 'undefined' || req.body.kai.length != 5) {
       res.status(500).render('nouveau_personnage', { erreur : "Selectionnez 5 disciplines kai"});
   }
-  
+
   if(typeof req.body.objet1 == 'undefined' || req.body.objet2 == 'undefined') {
     res.status(500).render('nouveau_personnage', { erreur : "Veuillez selectionner deux objets"});
   }
-  
+
   // Declaration de l'objet personnage
   personnage = {
     nomPersonnage : "",
@@ -37,12 +37,12 @@ router.post('/nouveauPersonnage', function(req, res) {
       bouclierPsychique : false,
       puissancePsychique : false,
       communicationAnimale : false,
-      maitrisePsychiqueDeLaMatiere : false  
+      maitrisePsychiqueDeLaMatiere : false
     },
     objet1 : "",
     objet2 : "",
-    habilete : 0, 
-    endurance : 0 
+    habilete : 0,
+    endurance : 0
   }
 
   // Verification du nom des disciplines et attribution
@@ -56,7 +56,7 @@ router.post('/nouveauPersonnage', function(req, res) {
 
   personnage.objet1 = req.body.objet1;
   personnage.objet2 = req.body.objet2;
-  
+
   personnage.nomPersonnage = req.body.nomPersonnage;
   personnage.habilete = Math.floor(Math.random() * (19 - 10 + 1) + 10);
   personnage.endurance = Math.floor(Math.random() * (29 - 20 + 1) + 20);
@@ -70,10 +70,81 @@ router.post('/nouveauPersonnage', function(req, res) {
     if(err) {
       res.send('DB problem');
     }
-  }); 
+  });
 
-  res.redirect('/jeu/1'); 
+  res.redirect('/jeu/1');
 
+});
+
+
+router.post('/modifierPersonnage/:id', function(req, res) {
+  id = req.params.id;
+
+  // Verification Inputs
+  if(typeof req.body.nomPersonnage !== 'undefined'){
+    if(req.body.nomPersonnage == '') {
+        res.json(req.body.nomPersonnage);
+    }
+  }
+
+  if(typeof req.body.kai !== 'undefined'){
+    if(req.body.kai.length != 5) {
+      res.json(req.body.kai);
+    }
+  }
+
+
+  var personnage;
+
+  //Requête à la BDD
+  var db = req.db;
+  var collection = db.get('personnages');
+
+  collection.find({nomPersonnage : id}, {}, function(e, docs) {
+    res.json(personnage);
+    personnage = docs;
+  });
+
+  //res.json(personnage);
+
+  // Verification du nom des disciplines et attribution
+  if(typeof req.body.kai !== 'undefined') {
+    for (var kai in personnage.disciplinesKai) {
+      //Boucle pour vérifier si la discipline kai sera attribuée
+      req.body.kai.forEach(function(e) {
+        if(e == kai) {
+          personnage.kai = true;
+        }
+      });
+    }
+  }
+
+
+  //Attribution des autres caractéristiques
+  if(typeof req.body.objet1 !== 'undefined') {
+    personnage.objet1 = req.body.objet1;
+  }
+  if(typeof req.body.objet2 !== 'undefined') {
+    personnage.objet2 = req.body.objet2;
+  }
+
+  if(typeof req.body.nomPersonnage !== 'undefined') {
+    personnage.nomPersonnage = req.body.nomPersonnage;
+  }
+
+    req.session.personnage = personnage;
+
+  collection.update(
+    {nomPersonnage : id},
+    { $set: {
+      kai : personnage.kai,
+
+      objet1 : personnage.objet1,
+      objet2 : personnage.objet2,
+
+      nomPersonnage : personnage.nomPersonnage
+    } }
+  );
 });
 
 module.exports = router;

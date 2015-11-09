@@ -101,50 +101,54 @@ router.post('/modifierPersonnage/:id', function(req, res) {
   var collection = db.get('personnages');
 
   collection.find({nomPersonnage : id}, {}, function(e, docs) {
-    res.json(personnage);
     personnage = docs;
+    //res.json(personnage);
+
+
+      // Verification du nom des disciplines et attribution
+      if(typeof req.body.kai !== 'undefined') {
+        for (var kai in personnage.disciplinesKai) {
+          //Boucle pour vérifier si la discipline kai sera attribuée
+          req.body.kai.forEach(function(e) {
+            if(e == kai) {
+              personnage.kai = true;
+            }
+          });
+        }
+      }
+
+
+      //Attribution des autres caractéristiques
+      if(typeof req.body.objet1 !== 'undefined') {
+        personnage.objet1 = req.body.objet1;
+      }
+      if(typeof req.body.objet2 !== 'undefined') {
+        personnage.objet2 = req.body.objet2;
+      }
+
+      if(typeof req.body.nomPersonnage !== 'undefined') {
+        personnage.nomPersonnage = req.body.nomPersonnage;
+      }
+
+        req.session.personnage = personnage;
+
+      collection.update(
+        {nomPersonnage : id},
+        { $set: {
+          nomPersonnage : personnage.nomPersonnage,
+          kai : personnage.kai,
+
+          objet1 : personnage.objet1,
+          objet2 : personnage.objet2,
+
+          nomPersonnage : personnage.nomPersonnage
+        } }
+      );
+
   });
 
-  //res.json(personnage);
-
-  // Verification du nom des disciplines et attribution
-  if(typeof req.body.kai !== 'undefined') {
-    for (var kai in personnage.disciplinesKai) {
-      //Boucle pour vérifier si la discipline kai sera attribuée
-      req.body.kai.forEach(function(e) {
-        if(e == kai) {
-          personnage.kai = true;
-        }
-      });
-    }
-  }
 
 
-  //Attribution des autres caractéristiques
-  if(typeof req.body.objet1 !== 'undefined') {
-    personnage.objet1 = req.body.objet1;
-  }
-  if(typeof req.body.objet2 !== 'undefined') {
-    personnage.objet2 = req.body.objet2;
-  }
-
-  if(typeof req.body.nomPersonnage !== 'undefined') {
-    personnage.nomPersonnage = req.body.nomPersonnage;
-  }
-
-    req.session.personnage = personnage;
-
-  collection.update(
-    {nomPersonnage : id},
-    { $set: {
-      kai : personnage.kai,
-
-      objet1 : personnage.objet1,
-      objet2 : personnage.objet2,
-
-      nomPersonnage : personnage.nomPersonnage
-    } }
-  );
 });
 
 module.exports = router;
